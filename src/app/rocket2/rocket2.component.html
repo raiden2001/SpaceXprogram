@@ -1,0 +1,28 @@
+
+<div *ngIf="rocket2; else showLoading">
+   <mat-card *ngFor="let rocket of rocket2" class=small-card>
+       <mat-card-header>
+               <mat-card-title>{{ rocket.rocket_name}}</mat-card-title>
+               <mat-card-subtitle>Description: {{rocket.description}}</mat-card-subtitle>
+       
+       
+       </mat-card-header>
+       <img mat-card-image src= {{rocket.splashImg}} alt="Photo of rocket">
+        <mat-card-actions>
+
+            <button [routerLink]="['/rocket', rocket.flightnumber]">More infor</button>
+        </mat-card-actions>
+   
+   </mat-card>
+</div>
+
+<ng-template #showingLoading>
+    <div class="loadingSpinner">
+        <mat-progress-spinner color={{color}} mode= {{mode}}></mat-progress-spinner>    
+
+
+    </div>
+
+
+
+</ng-template>
